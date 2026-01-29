@@ -20,7 +20,7 @@ class OnboardingScreen extends StatelessWidget {
                   Image.asset(
                     'assets/pngs/onboarding.png',
                     height: 40.h,
-                    width: 100.w,
+                    width: 90.w,
                   ),
                   Text('Start Cooking', style: TextManager.font24black700wight),
                   SizedBox(height: 2.h),
