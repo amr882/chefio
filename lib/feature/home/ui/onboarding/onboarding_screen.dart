@@ -12,14 +12,14 @@ class OnboardingScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 2.h),
+            padding: EdgeInsets.only(top: 10.h),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
                     'assets/pngs/onboarding.png',
-                    height: 55.h,
+                    height: 40.h,
                     width: 100.w,
                   ),
                   Text('Start Cooking', style: TextManager.font24black700wight),

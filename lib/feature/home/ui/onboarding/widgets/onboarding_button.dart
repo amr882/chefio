@@ -10,15 +10,18 @@ class OnboardingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 5.w),
-      child: Container(
-        height: 7.h,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: ColorManager.mainGreen,
-          borderRadius: BorderRadius.circular(100),
-        ),
-        child: Center(
-          child: Text('Get Started', style: TextManager.font18white600wight),
+      child: GestureDetector(
+        onTap: () => Navigator.pushNamed(context, 'loginScreen'),
+        child: Container(
+          height: 7.h,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: ColorManager.mainGreen,
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: Center(
+            child: Text('Get Started', style: TextManager.font18white600wight),
+          ),
         ),
       ),
     );
