@@ -1,5 +1,5 @@
 import 'package:chefio/core/theme/text_manager.dart';
-import 'package:chefio/feature/home/ui/onboarding/widgets/onboarding_button.dart';
+import 'package:chefio/core/widget/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -30,7 +30,10 @@ class OnboardingScreen extends StatelessWidget {
                     style: TextManager.font20gray400wight,
                   ),
                   SizedBox(height: 10.h),
-                  OnboardingButton(),
+                  AppButton(
+                    onTap: () => Navigator.pushNamed(context, 'loginScreen'),
+                    text: 'Get Started',
+                  ),
                 ],
               ),
             ),
@@ -39,4 +42,9 @@ class OnboardingScreen extends StatelessWidget {
       ),
     );
   }
+
+  void appButton({
+    required Future<Object?> Function() onTap,
+    required String text,
+  }) {}
 }

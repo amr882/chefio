@@ -1,10 +1,17 @@
 import 'package:chefio/core/theme/text_manager.dart';
-import 'package:chefio/feature/home/ui/log_in_screen/widget/log_in_screen_button.dart';
+import 'package:chefio/core/widget/app_button.dart';
+import 'package:chefio/core/widget/app_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LogInScreen extends StatelessWidget {
+class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
 
+  @override
+  State<LogInScreen> createState() => _LogInScreenState();
+}
+
+class _LogInScreenState extends State<LogInScreen> {
+  bool _isPasswordVisible = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,10 +29,32 @@ class LogInScreen extends StatelessWidget {
                 ),
 
                 //  text fields
-                SizedBox(height: 50),
-                Text("username"),
-                SizedBox(height: 16),
-                Text("password"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 16,
+                  ),
+                  child: AppTextField(hint: "email"),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: AppTextField(
+                    isPassword: _isPasswordVisible,
+                    hint: "password",
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _isPasswordVisible = !_isPasswordVisible;
+                        });
+                      },
+                      child: _isPasswordVisible
+                          ? Icon(Icons.visibility_off)
+                          : Icon(Icons.visibility),
+                    ),
+                  ),
+                ),
+
                 SizedBox(height: 30),
                 Padding(
                   padding: EdgeInsets.only(right: 16.0),
@@ -33,19 +62,25 @@ class LogInScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: Text(
                       "forgot password?",
-                      style: TextManager.font20black500wight,
+                      style: TextManager.font20darkBlue500wight,
                     ),
                   ),
                 ),
-                SizedBox(height: 16),
-                LogInScreenButton(),
-                SizedBox(height: 16),
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: AppButton(
+                    onTap: () => Navigator.pushNamed(context, 'homeScreen'),
+                    text: 'Login',
+                  ),
+                ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don’t have any account?",
-                      style: TextManager.font20black500wight,
+                      "Don’t have any account? ",
+                      style: TextManager.font20darkBlue500wight,
                     ),
                     Text("Sign Up", style: TextManager.font20green500wight),
                   ],

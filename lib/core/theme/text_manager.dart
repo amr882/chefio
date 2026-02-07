@@ -18,9 +18,9 @@ class TextManager {
     color: Color(0xFFFFFFFF),
     fontWeight: FontWeight.w600,
   );
-  static TextStyle font20black500wight = TextStyle(
+  static TextStyle font20darkBlue500wight = TextStyle(
     fontSize: 20,
-    color: Color(0xFF2E3E5C),
+    color: ColorManager.darkBlue,
     fontWeight: FontWeight.w500,
   );
   static TextStyle font20green500wight = TextStyle(
