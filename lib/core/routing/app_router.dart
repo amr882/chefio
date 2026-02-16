@@ -1,5 +1,5 @@
 import 'package:chefio/core/routing/routes.dart';
-import 'package:chefio/feature/home/ui/log_in_screen/log_in_screen.dart';
+import 'package:chefio/feature/log_in/ui/log_in_screen.dart';
 import 'package:chefio/feature/home/ui/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
